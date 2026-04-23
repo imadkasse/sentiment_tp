@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("best_model.h5")
+    model = tf.keras.models.load_model("best_model.h5", compile=False)
     with open("tokenizer.pkl", "rb") as f:
         tokenizer = pickle.load(f)
     return model, tokenizer
